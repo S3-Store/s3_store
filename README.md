@@ -1,6 +1,6 @@
 <img width="250" src="./s3-logo.svg" alt="Solidus logo">
 
-# Solidus
+# S3_STORE
 
 [![Circle CI](https://circleci.com/gh/solidusio/solidus/tree/main.svg?style=shield)](https://circleci.com/gh/solidusio/solidus/tree/main)
 [![codecov](https://codecov.io/gh/solidusio/solidus/branch/main/graph/badge.svg)](https://codecov.io/gh/solidusio/solidus/branch/main)
