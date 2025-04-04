@@ -149,6 +149,11 @@ module Spree
       super || variant_tax_category_id
     end
 
+    def recalculate_price
+      self.money_price = variant.price_for_options(pricing_options)&.money
+      save
+    end
+
     private
 
     # Sets the quantity to zero if it is nil or less than zero.

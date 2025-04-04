@@ -73,6 +73,10 @@ module Spree
 
     preference :payment_method_attributes, :array, default: [:id, :name, :description]
 
+    preference :price_list_attributes, :array, default: [:id, :name, :price_ids]
+
+    preference :user_group_attributes, :array, default: [:id, :group_name, :price_list_id]
+
     preference :shipment_attributes, :array, default: [:id, :tracking, :tracking_url, :number, :cost, :shipped_at, :state, :customer_metadata]
 
     preference :taxonomy_attributes, :array, default: [:id, :name]
@@ -118,7 +122,7 @@ module Spree
       :id, :month, :year, :cc_type, :last_digits, :name
     ]
 
-    preference :user_attributes, :array, default: [:id, :email, :created_at, :updated_at, :customer_metadata]
+    preference :user_attributes, :array, default: [:id, :email, :created_at, :updated_at, :user_group_id, :customer_metadata]
 
     preference :property_attributes, :array, default: [:id, :name, :presentation]
 
@@ -149,7 +153,7 @@ module Spree
     preference :store_attributes, :array, default: [
       :id, :name, :url, :meta_description, :meta_keywords, :seo_title,
       :mail_from_address, :default_currency, :code, :default, :available_locales,
-      :bcc_email
+      :bcc_email, :default_user_group_id
     ]
 
     preference :store_credit_history_attributes, :array, default: [

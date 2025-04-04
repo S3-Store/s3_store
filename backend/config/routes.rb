@@ -15,7 +15,8 @@ Spree::Core::Engine.routes.draw do
     end
 
     resources :zones
-
+    resources :price_lists
+    resources :user_groups
     resources :tax_categories
 
     resources :products do

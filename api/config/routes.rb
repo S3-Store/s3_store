@@ -17,6 +17,10 @@ Spree::Core::Engine.routes.draw do
       resources :product_properties
     end
 
+    resources :price_lists
+    resources :user_groups
+
+
     # TODO: Use only: :index on Solidus v4.0
     resources :variants do
       resources :images

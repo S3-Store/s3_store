@@ -37,7 +37,8 @@ module Spree::Api
             "default_currency" => nil,
             "code" => store.code,
             "default" => true,
-            "available_locales" => ["en"]
+            "available_locales" => ["en"],
+            "default_user_group_id" => nil
           },
           {
             "id" => non_default_store.id,
@@ -51,7 +52,8 @@ module Spree::Api
             "default_currency" => nil,
             "code" => non_default_store.code,
             "default" => false,
-            "available_locales" => ["en"]
+            "available_locales" => ["en"],
+            "default_user_group_id" => nil
           }
         ])
       end
@@ -70,7 +72,8 @@ module Spree::Api
           "default_currency" => nil,
           "code" => store.code,
           "default" => true,
-          "available_locales" => ["en"]
+          "available_locales" => ["en"],
+          "default_user_group_id" => nil
         )
       end
 
