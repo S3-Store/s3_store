@@ -199,6 +199,13 @@ module Spree
               match_path: '/products',
             ),
             MenuItem.new(
+              label: :price_lists,
+              condition: -> {
+                can?(:admin, Spree::PriceList)
+              },
+              match_path: '/price_lists'
+            ),
+            MenuItem.new(
               label: :option_types,
               condition: -> { can? :admin, Spree::OptionType },
               match_path: '/option_types',
