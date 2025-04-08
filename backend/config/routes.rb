@@ -20,6 +20,7 @@ Spree::Core::Engine.routes.draw do
       resources :price_list_items, only: [:destroy, :edit, :update, :new, :create]
     end
 
+    resources :user_groups
     resources :tax_categories
 
     resources :products do
