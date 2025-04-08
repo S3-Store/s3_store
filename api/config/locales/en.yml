@@ -22,3 +22,5 @@ en:
         transfer_success: Variants successfully transferred
       stock_not_below_zero: Stock must not be below zero.
       unauthorized: You are not authorized to perform that action.
+      price_belongs_to_pricelist: Price belongs to price list and cannot be edited or deleted from product page
+
