@@ -9,6 +9,9 @@ module Spree
     belongs_to :variant, -> { with_discarded }, class_name: 'Spree::Variant', touch: true, optional: true
     belongs_to :country, class_name: "Spree::Country", foreign_key: "country_iso", primary_key: "iso", optional: true
 
+    has_many :price_list_items, class_name: 'Spree::PriceListItem'
+    has_many :price_lists, through: :price_list_items, class_name: 'Spree::PriceList'
+
     delegate :product, to: :variant
     delegate :tax_rates, to: :variant
 

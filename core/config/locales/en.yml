@@ -648,6 +648,9 @@ en:
       spree/price:
         one: Price
         other: Prices
+      spree/price_list:
+        one: Price List
+        other: Price Lists
       spree/product:
         one: Product
         other: Products
@@ -759,6 +762,9 @@ en:
       spree/user:
         one: User
         other: Users
+      spree/user_group:
+        one: User Group
+        other: User Groups
       spree/variant:
         one: Variant
         other: Variants
@@ -950,6 +956,8 @@ en:
         orders: Orders
         overview: Overview
         payments: Payments
+        price_list: Price List
+        price_lists: Price Lists
         products: Products
         properties: Property Types
         rma: RMA
@@ -961,6 +969,7 @@ en:
         taxes: Taxes
         taxonomies: Taxonomies
         taxons: Taxons
+        user_groups: User Groups
         users: Users
         zones: Zones
       taxons:
@@ -974,6 +983,7 @@ en:
         order_num: 'Order #'
         orders: Orders
         store_credit: Store Credit
+        user_group: User Group
         user_information: User Information
       users:
         edit:
@@ -1789,6 +1799,7 @@ en:
     new_order_completed: New Order Completed
     new_payment: New Payment
     new_payment_method: New Payment Method
+    new_price_list: New Price List
     new_product: New Product
     new_property: New Property Type
     new_refund: New Refund
@@ -1810,6 +1821,7 @@ en:
     new_taxonomy: New Taxonomy
     new_tracker: New Analytics Tracker
     new_user: New User
+    new_user_group: New User Group
     new_variant: New Variant
     new_zone: New Zone
     next: Next

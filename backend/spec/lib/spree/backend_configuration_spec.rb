@@ -31,7 +31,7 @@ RSpec.describe Spree::BackendConfiguration do
         end
 
         it 'is not shown if none of its submenus are present' do
-          expect(view).to receive(:can?).exactly(13).times.and_return(false)
+          expect(view).to receive(:can?).exactly(15).times.and_return(false)
 
           expect(menu_item.render_in?(view)).to eq(false)
         end

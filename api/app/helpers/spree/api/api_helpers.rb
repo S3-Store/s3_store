@@ -13,6 +13,8 @@ module Spree
         :line_item_attributes,
         :option_type_attributes,
         :payment_attributes,
+        :price_list_attributes,
+        :user_group_attributes,
         :payment_method_attributes,
         :shipment_attributes,
         :taxonomy_attributes,

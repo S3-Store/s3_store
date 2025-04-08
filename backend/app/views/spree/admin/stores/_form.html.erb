@@ -30,6 +30,12 @@
       <%= f.text_area :meta_description, class: 'fullwidth' %>
       <%= f.error_message_on :meta_description %>
     <% end %>
+
+    <%= f.field_container :default_user_group_id do %>
+      <%= f.label :default_user_group_id %>
+      <%= f.collection_select :default_user_group_id, Spree::UserGroup.all, :id, :group_name, { include_blank: true }, { class: 'custom-select' } %>
+      <%= f.error_message_on :default_user_group_id %>
+    <% end %>
   </div>
   <div class="col-12 col-md-6">
     <%= f.field_container :url do %>

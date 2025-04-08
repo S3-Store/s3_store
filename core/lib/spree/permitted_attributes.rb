@@ -34,7 +34,9 @@ module Spree
       :taxon_attributes,
       :taxonomy_attributes,
       :user_attributes,
-      :variant_attributes
+      :variant_attributes,
+      :price_list_attributes,
+      :user_group_attributes
     ]
 
     mattr_reader(*ATTRIBUTES)
@@ -101,6 +103,9 @@ module Spree
       :selected_shipping_rate_id, customer_metadata: {}
     ]
 
+    @@price_list_attributes = [ :name, price_ids:[]]
+
+    @@user_group_attributes = [:group_name, :price_list_id]
     # month / year may be provided by some sources, or others may elect to use one field
     @@source_attributes = [
       :number, :month, :year, :expiry, :verification_value,
@@ -124,7 +129,7 @@ module Spree
     @@store_attributes = [:name, :url, :seo_title, :meta_keywords,
                           :meta_description, :default_currency,
                           :mail_from_address, :cart_tax_country_iso,
-                          :bcc_email]
+                          :bcc_email, :default_user_group_id]
 
     @@taxonomy_attributes = [:name]
 
@@ -137,7 +142,7 @@ module Spree
     # by changing a user with higher priveleges' email to one a lower-priveleged
     # admin owns. Creating a user with an email is handled separate at the
     # controller level.
-    @@user_attributes = [:password, :password_confirmation, customer_metadata: {}]
+    @@user_attributes = [:password, :password_confirmation, :user_group_id, customer_metadata: {}]
 
     @@variant_attributes = [
       :name, :presentation, :cost_price, :lock_version,

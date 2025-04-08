@@ -6,7 +6,7 @@ module Spree::Api
   describe 'Users', type: :request do
     let(:user) { create(:user, spree_api_key: SecureRandom.hex) }
     let(:stranger) { create(:user, email: 'stranger@example.com') }
-    let(:attributes) { [:id, :email, :created_at, :updated_at, :customer_metadata] }
+    let(:attributes) { [:id, :email, :created_at, :updated_at, :user_group_id, :customer_metadata] }
 
     context "as a normal user" do
       it "can get own details" do
