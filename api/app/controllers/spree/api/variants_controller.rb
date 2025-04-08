@@ -4,6 +4,7 @@ module Spree
   module Api
     class VariantsController < Spree::Api::BaseController
       before_action :product
+      before_action :check_pricelist_price, only: [:update, :destroy]
 
       def create
         authorize! :create, Variant
@@ -90,6 +91,16 @@ module Spree
 
       def include_list
         [{ option_values: :option_type }, :product, :prices, :images, { stock_items: :stock_location }]
+      end
+
+      def check_pricelist_price
+        @variant = scope.find(params[:id])
+        pricing_options = Spree::Config.default_pricing_options
+        price_object = @variant.price_for_options(pricing_options)
+
+        if price_object.is_pricelist_price
+          render json: { error: t('spree.api.price_belongs_to_pricelist') }, status: 422
+        end
       end
     end
   end
