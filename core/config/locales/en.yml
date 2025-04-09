@@ -895,6 +895,8 @@ en:
         any_country: Any Country
         edit:
           edit_price: Edit Price
+        errors:
+          price_belongs_to_pricelist: Price belongs to price list and cannot be edited or deleted from product page
         index:
           amount_greater_than: Amount greater than
           amount_less_than: Amount less than

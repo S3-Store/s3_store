@@ -28,6 +28,7 @@
         <%= error_message_on :price_list, :contain_taxes %>
       <% end %>
     </div>
+    <%= f.hidden_field :is_pricelist_price, value: true %>
   </div>
 </div>
 <div class="clear"></div>
