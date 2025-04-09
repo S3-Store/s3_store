@@ -20,6 +20,17 @@
       <%= f.label :price %>
       <%= render "spree/admin/shared/number_with_currency", f: f, amount_attr: :price, currency_attr: :currency, currency: @price_list.currency %>
     </div>
+
+    <div data-hook="admin_price_list_item_price_form_contain_taxes" class="col-5">
+      <%= field_container :contain_taxes, class: %w(checkbox) do %>
+        <label>
+          <%= f.check_box(:contain_taxes) %>
+          <%= t('spree.contain_taxes') %>
+        </label>
+        <%= error_message_on :price_list, :contain_taxes %>
+      <% end %>
+    </div>
+      <%= f.hidden_field :is_pricelist_price, value: true %>
   </div>
 </div>
 <div class="clear"></div>
