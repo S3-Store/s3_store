@@ -1,0 +1,54 @@
+<% admin_breadcrumb(link_to plural_resource_name(Spree::Product), spree.admin_products_path) %>
+<% admin_breadcrumb(plural_resource_name(Spree::PriceList)) %>
+
+<% content_for :page_actions do %>
+  <% if can?(:create, Spree::PriceList) %>
+    <li>
+      <%= link_to t('spree.new_price_list'), new_object_url, id: 'admin_new_price_list_link', class: 'btn btn-primary' %>
+    </li>
+  <% end %>
+<% end %>
+
+<% if @price_lists.any? %>
+  <table class="index" id='listing_price_lists'>
+    <colgroup>
+      <col style="width: 40%">
+      <col style="width: 40%">
+      <col style="width: 20%">
+    </colgroup>
+    <thead>
+      <tr data-hook="admin_price_lists_index_headers">
+        <th><%= Spree::PriceList.human_attribute_name(:name) %></th>
+        <th><%= Spree::UserGroup.model_name.human.pluralize %></th>
+        <th data-hook="admin_price_lists_index_header_actions" class="actions"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @price_lists.each do |price_list| %>
+        <tr id="<%= spree_dom_id price_list %>" data-hook="admin_price_lists_index_rows">
+          <td><%= link_to price_list.try(:name), edit_admin_price_list_path(price_list) %></td>
+          <td>
+            <span title="<%= price_list.user_groups.map(&:group_name).join(', ') %>">
+              <%= price_list.user_groups.count %> <%= Spree::UserGroup.model_name.human.pluralize %>
+            </span>
+          </td>
+          <td data-hook="admin_price_lists_index_row_actions" class="actions">
+            <% if can?(:update, price_list) %>
+              <%= link_to_edit price_list, no_text: true %>
+            <% end %>
+
+            <% if can?(:destroy, price_list) %>
+              <%= link_to_delete price_list, no_text: true %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="no-objects-found">
+    <%= render 'spree/admin/shared/no_objects_found',
+                 resource: Spree::PriceList,
+                 new_resource_url: new_object_url %>
+  </div>
+<% end %>
