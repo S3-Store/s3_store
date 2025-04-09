@@ -1,0 +1,25 @@
+<div data-hook="admin_price_list_item_price_fields">
+  <div data-hook="admin_price_list_item_price_form">
+    <div data-hook="admin_price_list_item_price_form_variant" class="col-12">
+      <%= f.label :variant %>
+      <%= f.collection_select :variant_id, Spree::Variant.all, :id, :descriptive_name,
+                          { include_blank: true },
+                          { class: "select2 fullwidth", disabled: !f.object.new_record? } %>
+    </div>
+
+    <div data-hook="admin_price_list_item_price_form_country" class="col-12">
+      <%= f.label :country %>
+      <%= f.field_hint :country %>
+      <%= f.collection_select :country_iso, available_countries(restrict_to_zone: nil), :iso, :name,
+                          { include_blank: t(:any_country, scope: [:spree, :admin, :prices]), selected: @price_list.try(:country).try(:iso) || nil },
+                          { class: 'custom-select fullwidth', disabled: true } %>
+       <%= f.hidden_field :country_iso, value: @price_list.try(:country).try(:iso) || nil %>
+    </div>
+
+    <div data-hook="admin_price_list_item_price_form_amount" class="col-4">
+      <%= f.label :price %>
+      <%= render "spree/admin/shared/number_with_currency", f: f, amount_attr: :price, currency_attr: :currency, currency: @price_list.currency %>
+    </div>
+  </div>
+</div>
+<div class="clear"></div>
