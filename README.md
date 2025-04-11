@@ -1,4 +1,4 @@
-<img width="250" src="./logo.svg" alt="Solidus logo">
+<img width="40%" src="https://github.com/user-attachments/assets/980b328e-b8db-41a9-b809-5fd54d77155f" alt="S3-Store Logo">
 
 # Solidus
 
