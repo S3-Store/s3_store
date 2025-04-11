@@ -1,6 +1,6 @@
 <img width="40%" src="https://github.com/user-attachments/assets/980b328e-b8db-41a9-b809-5fd54d77155f" alt="S3-Store Logo">
 
-# Solidus
+# S3-Store
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/circleci/84LMKgaUH7FGV7i6pcWhah/HBsbvsQpaU4d2ektARajQS/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/circleci/84LMKgaUH7FGV7i6pcWhah/HBsbvsQpaU4d2ektARajQS/tree/main)
 [![codecov](https://codecov.io/gh/solidusio/solidus/branch/main/graph/badge.svg)](https://codecov.io/gh/solidusio/solidus/branch/main)
