@@ -1,0 +1,22 @@
+<% admin_breadcrumb(link_to plural_resource_name(Spree::Product), spree.admin_products_path) %>
+<% admin_breadcrumb(link_to(plural_resource_name(Spree::PriceList), spree.admin_price_lists_path)) %>
+<% admin_breadcrumb(link_to(@price_list.name, edit_admin_price_list_path(@price_list))) %>
+
+<% admin_breadcrumb(link_to (plural_resource_name(Spree::Price)), edit_admin_price_list_path(@price_list)) %>
+<% admin_breadcrumb(t('spree.actions.edit')) %>
+
+
+<%= form_for [:admin, @price_list, @price_list_item] do |f| %>
+  <fieldset data-hook="admin_price_list_price_edit_form">
+    <legend> <%= t('.edit_price') %> </legend>
+
+    <%= f.fields_for :price do |price_form| %>
+      <%= render 'form', f: price_form %>
+    <% end %>
+    <div class="form-buttons filter-actions actions" data-hook="buttons">
+      <%= submit_tag t('spree.actions.update'), class: 'btn btn-primary' %>
+      <%= link_to t('spree.actions.cancel'), edit_admin_price_list_path(@price_list), class: 'button' %>
+    </div>
+
+  </fieldset>
+<% end %>
