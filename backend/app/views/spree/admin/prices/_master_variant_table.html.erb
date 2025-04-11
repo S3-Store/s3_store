@@ -25,12 +25,16 @@
         <td><%= price.currency %></td>
         <td><%= price.money.to_html %></td>
         <td class="actions">
-          <% if can?(:edit, price) %>
+          <% if can?(:edit, price) && !price.is_pricelist_price %>
             <%= link_to_edit(price, no_text: true) unless price.discarded? %>
           <% end %>
-          <% if can?(:destroy, price) %>
+          <% if can?(:destroy, price) && !price.is_pricelist_price %>
             &nbsp;
             <%= link_to_delete(price, no_text: true) unless price.discarded? %>
+          <% end %>
+          <% if price.is_pricelist_price  %>
+            &nbsp;
+            <%= link_to price.price_list.name, edit_admin_price_list_path(price.price_list) %>
           <% end %>
         </td>
       </tr>

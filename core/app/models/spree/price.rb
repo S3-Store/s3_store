@@ -9,6 +9,9 @@ module Spree
     belongs_to :variant, -> { with_discarded }, class_name: 'Spree::Variant', touch: true, optional: true
     belongs_to :country, class_name: "Spree::Country", foreign_key: "country_iso", primary_key: "iso", optional: true
 
+    has_one :price_list_item, class_name: 'Spree::PriceListItem'
+    has_one :price_list, through: :price_list_item, class_name: 'Spree::PriceList'
+
     delegate :product, to: :variant
     delegate :tax_rates, to: :variant
 
@@ -24,6 +27,7 @@ module Spree
     scope :for_master, -> { joins(:variant).where(spree_variants: { is_master: true }) }
     scope :for_variant, -> { joins(:variant).where(spree_variants: { is_master: false }) }
     scope :for_any_country, -> { where(country: nil) }
+    scope :without_pricelist, -> { where(is_pricelist_price: false) }
     scope :with_default_attributes, -> { where(Spree::Config.default_pricing_options.desired_attributes) }
 
     extend DisplayMoney

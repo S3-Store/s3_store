@@ -359,6 +359,7 @@ en:
         cart_tax_country_iso: Tax Country for Empty Carts
         code: Slug
         default: Default
+        default_cart_user_group_id: Default User Group
         default_currency: Default Currency
         mail_from_address: Mail From Address
         meta_description: Meta Description
@@ -475,6 +476,10 @@ en:
               does_not_match_order_currency: Line item price currency must match order currency!
               not_a_number: is not valid
         spree/price:
+          attributes:
+            currency:
+              invalid_code: is not a valid currency code
+        spree/price_list:
           attributes:
             currency:
               invalid_code: is not a valid currency code
@@ -646,6 +651,9 @@ en:
       spree/price:
         one: Price
         other: Prices
+      spree/price_list:
+        one: Price List
+        other: Price Lists
       spree/product:
         one: Product
         other: Products
@@ -757,6 +765,9 @@ en:
       spree/user:
         one: User
         other: Users
+      spree/user_group:
+        one: User Group
+        other: User Groups
       spree/variant:
         one: Variant
         other: Variants
@@ -870,10 +881,22 @@ en:
         source_forms:
           storecredit:
             not_supported: Creating store credit payments via the admin is not currently supported.
+      price_list_items:
+        edit:
+          edit_price: Edit Price
+        new:
+          new_price: New Price
+      price_lists:
+        edit:
+          new_price: Add New Price
+        price_list_info:
+          price_details: Price Details
       prices:
         any_country: Any Country
         edit:
           edit_price: Edit Price
+        errors:
+          price_belongs_to_pricelist: Price belongs to price list and cannot be edited or deleted from product page
         index:
           amount_greater_than: Amount greater than
           amount_less_than: Amount less than
@@ -948,6 +971,8 @@ en:
         orders: Orders
         overview: Overview
         payments: Payments
+        price_list: Price List
+        price_lists: Price Lists
         products: Products
         properties: Property Types
         rma: RMA
@@ -959,6 +984,7 @@ en:
         taxes: Taxes
         taxonomies: Taxonomies
         taxons: Taxons
+        user_groups: User Groups
         users: Users
         zones: Zones
       taxons:
@@ -972,6 +998,7 @@ en:
         order_num: 'Order #'
         orders: Orders
         store_credit: Store Credit
+        user_group: User Group
         user_information: User Information
       users:
         edit:
@@ -1149,6 +1176,7 @@ en:
     confirm_delete: Confirm Deletion
     confirm_order: Confirm Order
     confirm_password: Password Confirmation
+    contain_taxes: Tax Included
     continue: Continue
     continue_shopping: Continue shopping
     cost_currency: Cost Currency
@@ -1528,6 +1556,7 @@ en:
     enable_mail_delivery: Enable Mail Delivery
     end: End
     ending_in: Ending in
+    enforce_group_upon_signup: Add all new users to Group
     error: error
     error_user_destroy_with_orders: Cannot delete a user with orders
     errors:
@@ -1609,6 +1638,9 @@ en:
         country: 'This determines in what country the price is valid.<br>Default: Any Country'
         master_variant: Changing master variant prices will not change variant prices below, but will be used to populate all new variants
         options: These options are used to create variants in the variants table. They can be changed in the variants tab
+      spree/price_list:
+        country: 'This determines in what country the price is valid.<br>Default: Any Country'
+        currency: This determines which currency will be used for the price list's prices. Please, be aware that this will be used while adding prices to the price list's.
       spree/product:
         available_on: This sets the availability date for the product. If this value is not set, or it is set to a date in the future, then the product is not available on the storefront.
         discontinue_on: This sets the discontinue date for the product. If this value is set to a date, then the product is not available on the storefront from that day on anymore.
@@ -1787,6 +1819,7 @@ en:
     new_order_completed: New Order Completed
     new_payment: New Payment
     new_payment_method: New Payment Method
+    new_price_list: New Price List
     new_product: New Product
     new_property: New Property Type
     new_refund: New Refund
@@ -1808,6 +1841,7 @@ en:
     new_taxonomy: New Taxonomy
     new_tracker: New Analytics Tracker
     new_user: New User
+    new_user_group: New User Group
     new_variant: New Variant
     new_zone: New Zone
     next: Next
