@@ -2,24 +2,14 @@
 
 # Solidus
 
-[![Circle CI](https://circleci.com/gh/solidusio/solidus/tree/main.svg?style=shield)](https://circleci.com/gh/solidusio/solidus/tree/main)
+[![CircleCI](https://dl.circleci.com/status-badge/img/circleci/84LMKgaUH7FGV7i6pcWhah/HBsbvsQpaU4d2ektARajQS/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/circleci/84LMKgaUH7FGV7i6pcWhah/HBsbvsQpaU4d2ektARajQS/tree/main)
 [![codecov](https://codecov.io/gh/solidusio/solidus/branch/main/graph/badge.svg)](https://codecov.io/gh/solidusio/solidus/branch/main)
 [![Gem](https://img.shields.io/gem/v/solidus.svg)](https://rubygems.org/gems/solidus)
-[![License](http://img.shields.io/badge/license-BSD-blue.svg)](LICENSE.md)
-
-[![Supporters on Open Collective](https://opencollective.com/solidus/tiers/supporter/badge.svg?label=Supporters&color=brightgree)](https://opencollective.com/solidus)
-[![Bronze Partners on Open Collective](https://opencollective.com/solidus/tiers/bronze/badge.svg?label=Bronze&nbsp;Partners&color=brightgree)](https://opencollective.com/solidus)
-[![Silver Partners on Open Collective](https://opencollective.com/solidus/tiers/silver/badge.svg?label=Silver&nbsp;Partners&color=brightgree)](https://opencollective.com/solidus)
-[![Gold Partners on Open Collective](https://opencollective.com/solidus/tiers/gold/badge.svg?label=Gold&nbsp;Partners&color=brightgree)](https://opencollective.com/solidus)
-[![Open Source Helpers](https://www.codetriage.com/solidusio/solidus/badges/users.svg)](https://www.codetriage.com/solidusio/solidus)
-[![Slack](https://shields.io/badge/slack-start_chatting-blue?logo=slack)](http://slack.solidus.io)
+[![License](http://img.shields.io/badge/license-GMS-blue.svg)](LICENSE.md)
 
 **A free, open-source e-commerce platform that gives you complete control over your store.**
 
-- **Visit our website**: [https://solidus.io/](https://solidus.io/)
-- **Read our Community Guidelines**: [https://guides.solidus.io/policies/community-guidelines/](https://guides.solidus.io/policies/community-guidelines/)
-- **Read our guides**: [https://guides.solidus.io/](https://guides.solidus.io/)
-- **Join our Slack**: [http://slack.solidus.io/](http://slack.solidus.io/)
+- **Visit our website & documentation**: [https://s3-store.org/](https://s3-store.org/)
 - **Solidus Security**: [mailing list](https://groups.google.com/forum/#!forum/solidus-security)
 
 
