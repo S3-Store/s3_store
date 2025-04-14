@@ -27,6 +27,17 @@ module Spree
       :option_type_presentation
     ]
 
+    preference :price_list_attributes, :array, default: [
+      :id, :name, :country_iso, :currency, :contain_taxes, :created_at, :updated_at
+    ]
+
+    preference :price_attributes, :array, default: [
+      :id, :amount, :currency, :country_iso, :variant_id, :contain_taxes
+    ]
+    preference :price_list_item_attributes, :array, default: [
+      :id, :price_list_id, :price_id, :created_at, :updated_at
+    ]
+
     preference :order_attributes, :array, default: [
       :id, :number, :item_total, :total, :ship_total, :state, :adjustment_total,
       :user_id, :created_at, :updated_at, :completed_at, :payment_total,

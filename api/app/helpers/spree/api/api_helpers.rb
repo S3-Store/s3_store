@@ -33,6 +33,9 @@ module Spree
         :stock_item_attributes,
         :promotion_attributes,
         :store_attributes,
+        :price_attributes,
+        :price_list_attributes,
+        :price_list_item_attributes,
         :store_credit_history_attributes,
         :variant_property_attributes
       ]
