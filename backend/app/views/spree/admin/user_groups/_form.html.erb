@@ -1,0 +1,17 @@
+<div data-hook="admin_user_group_form_fields" class="row">
+  <div data-hook="admin_user_group_form_group_name_field" class="col-5">
+    <%= f.field_container :group_name do %>
+      <%= f.label :group_name, class: 'required' %>
+      <%= f.text_field :group_name, class: 'fullwidth' %>
+      <%= error_message_on :user_group, :group_name %>
+    <% end %>
+  </div>
+
+  <div data-hook="admin_user_group_form_price_list_field" class="col-5">
+    <%= f.field_container :price_list_id do %>
+      <%= f.label :price_list_id %><br>
+      <%= f.collection_select :price_list_id, @price_list, :id, :name, { include_blank: true }, { class: "custom-select" } %>
+      <%= error_message_on :user_group, :price_list_id %>
+    <% end %>
+  </div>
+</div>

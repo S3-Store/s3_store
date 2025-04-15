@@ -1,0 +1,43 @@
+<div data-hook="admin_price_list_form_fields" class="row">
+  <div data-hook="admin_price_list_form_name_field" class="col-5">
+    <%= f.field_container :name do %>
+      <%= f.label :name, class: 'required' %>
+      <%= f.text_field :name, class: 'fullwidth' %>
+      <%= error_message_on :price_list, :name %>
+    <% end %>
+  </div>
+
+  <div data-hook="admin_price_list_form_country" class="col-5">
+    <%= f.field_container :country do %>
+      <%= f.label :country %>
+      <%= f.field_hint :country %>
+      <%= f.collection_select :country_iso, available_countries(restrict_to_zone: nil), :iso, :name,
+                                  {
+                                    include_blank: t(:any_country, scope: [:spree, :admin, :prices])
+                                  },
+                                  { class: 'custom-select fullwidth', disabled: !f.object.new_record? } %>
+    <% end %>
+  </div>
+
+  <div data-hook="admin_price_list_form_currency" class="col-5">
+    <%= f.field_container :currency do %>
+      <%= f.label :currency %>
+      <%= f.field_hint :currency %>
+      <%= f.select :currency,
+        Spree::Config.available_currencies.map(&:iso_code),
+        { include_blank: true },
+        { class: 'custom-select fullwidth' } %>
+      <%= error_message_on :price_list, :currency %>
+    <% end %>
+  </div>
+
+  <div data-hook="admin_price_list_form_contain_taxes" class="col-5">
+    <%= f.field_container :contain_taxes, class: %w(checkbox) do %>
+      <label>
+        <%= f.check_box(:contain_taxes) %>
+        <%= t('spree.contain_taxes') %>
+      </label>
+      <%= error_message_on :price_list, :contain_taxes %>
+    <% end %>
+  </div>
+</div>

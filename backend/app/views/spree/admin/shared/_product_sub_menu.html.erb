@@ -4,6 +4,9 @@
   <% if can? :admin, Spree::Product %>
     <%= tab label: :products, match_path: '/products' %>
   <% end %>
+  <% if can? :admin, Spree::PriceList %>
+    <%= tab label: :price_lists, match_path: '/price_lists' %>
+  <% end %>
   <% if can? :admin, Spree::OptionType %>
     <%= tab label: :option_types, match_path: '/option_types' %>
   <% end %>
