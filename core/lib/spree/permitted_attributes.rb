@@ -33,6 +33,9 @@ module Spree
       :store_attributes,
       :taxon_attributes,
       :taxonomy_attributes,
+      :price_attributes,
+      :price_list_attributes,
+      :price_list_item_attributes,
       :user_attributes,
       :variant_attributes
     ]
@@ -86,6 +89,12 @@ module Spree
     ]
 
     @@property_attributes = [:name, :presentation]
+
+    @@price_list_attributes = [:name, :currency, :country_iso, :contain_taxes]
+
+    @@price_attributes = [:id, :amount, :currency, :country_iso, :variant_id, :contain_taxes]
+
+    @@price_list_item_attributes = [:price_list_id, price_attributes: price_attributes]
 
     @@return_authorization_attributes = [:memo, :stock_location_id, :return_reason_id,
                                          customer_metadata: {},

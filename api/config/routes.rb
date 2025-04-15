@@ -22,6 +22,10 @@ Spree::Core::Engine.routes.draw do
       resources :images
     end
 
+    resources :price_lists do
+      resources :price_list_items, path: 'prices', only: [:index, :create, :update, :destroy]
+    end
+
     concern :order_routes do
       resources :line_items
       resources :payments do

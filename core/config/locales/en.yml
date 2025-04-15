@@ -483,6 +483,11 @@ en:
           attributes:
             currency:
               invalid_code: is not a valid currency code
+        spree/price_list_item:
+          attributes:
+            price:
+              does_not_match_price_list_country: Price must match price list country
+              does_not_match_price_list_currency: Price must match price list currency
         spree/promotion:
           attributes:
             apply_automatically:
