@@ -27,6 +27,7 @@ module Spree
     scope :for_master, -> { joins(:variant).where(spree_variants: { is_master: true }) }
     scope :for_variant, -> { joins(:variant).where(spree_variants: { is_master: false }) }
     scope :for_any_country, -> { where(country: nil) }
+    scope :without_pricelist, -> { where(is_pricelist_price: false) }
     scope :with_default_attributes, -> { where(Spree::Config.default_pricing_options.desired_attributes) }
 
     extend DisplayMoney
